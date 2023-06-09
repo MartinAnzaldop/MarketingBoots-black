@@ -7,13 +7,13 @@ conectarDB()
 app.use(cors());
 app.use(express.json());
 //Funciones de Martin
-
+app.use('/api/producto', require('./routes/producto.js'))
 
 
 
 //Funciones de Ale
 
-
+ 
 
 
 
