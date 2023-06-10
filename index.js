@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 //Funciones de Ale
-
+app.use('/api/servicio', require('./routes/servicio.js'))
 
 
 
