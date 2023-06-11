@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 //Funciones de Norma
-
+app.use('/api/agregar', require('./routes/agregarencuestador'));
 
 
 
