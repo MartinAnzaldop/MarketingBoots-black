@@ -3,13 +3,22 @@ const Producto = require('../models/Producto.js');
 //Peticion Post
 exports.crearProducto= async (req, res)=>{
  try {
-     let producto;
-     producto = new Producto(req.body);
-     await producto.save();
+   const{nombre, marca, categoria, precio, descripcion}=req.body
+   const newproducto={
+      nombre: nombre,
+      marca:marca,
+      categoria:categoria,
+      precio:precio,
+      descripcion:descripcion,
+      URLimagen:req.file.path
+    }
+     const producto = new Producto(newproducto);
+     
+      await producto.save();
      res.send(producto)
  } catch (error) {
     res.status(500).send('Hubo un error al insertar un producto');
- }
+ } 
 }
 
 //Peticion Get
@@ -25,7 +34,7 @@ exports.consultarProductos= async (req, res)=>{
    //Peticion Put
    exports.editarProducto= async (req, res)=>{
     try {
-       const {nombre, marca, categoria, precio, descripcion, imagen}=req.body;
+       const {nombre, marca, categoria, precio, descripcion, URLimagen}=req.body;
        let producto = await Producto.findById(req.params.id);
        if(!producto){
         res.status(404).json({ msg: "No existe el producto con esa id"})
@@ -35,7 +44,7 @@ exports.consultarProductos= async (req, res)=>{
        producto.categoria=categoria;
        producto.precio=precio;
        producto.descripcion=descripcion;
-       producto.imagen=imagen;
+       producto.URLimagen=URLimagen;
        producto = await Producto.findOneAndUpdate({_id: req.params.id}, producto, {new:true})
        res.json(producto);
     } catch (error) {

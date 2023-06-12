@@ -21,12 +21,14 @@ descripcion:{
     type: String,
     require:true
 },
-imagen:{
+URLimagen:{
     type: String,
 },
-fechaCreacion:{
+fechaCreacion:{ 
     type: Date,
     default: Date.now()
 }, 
 });
+
+
 module.exports = mongoose.model('Producto', ProductoSchema);
