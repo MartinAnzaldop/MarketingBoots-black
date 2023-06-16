@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const EncuestadorSchema = mongoose.Schema({
-    nombreEnc:{
+    nombre:{
         type: String,
         require: true
     },
@@ -14,6 +14,10 @@ const EncuestadorSchema = mongoose.Schema({
     sexo:{
         type: String,
         require:true
+    },
+
+    imagen:{
+        type: String,
     },
 
     correoElect:{
