@@ -23,6 +23,10 @@ app.use(express.json());
 
 
 //Funciones de Ana
+app.use('/api/encuesta', require('./routes/encuesta.js'))
+
+
+
 app.listen(4000, ()=>{
     console.log('El servidor 4000 esta corriendo')
 })
