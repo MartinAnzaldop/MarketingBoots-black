@@ -9,8 +9,10 @@ conectarDB()
 app.use(cors());
 app.use(express.json());
 //Funciones de Martin
+app.use('/api/pedido', require('./routes/pedido.js') );
 app.use('/api/producto', require('./routes/producto.js'))
 app.use('/upload', express.static(path.resolve('uploads')))
+
 
 //Funciones de Ale
 app.use('/api/servicio', require('./routes/servicio.js'))
