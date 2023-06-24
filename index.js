@@ -23,7 +23,8 @@ app.use(express.json());
 
 
 //Funciones de Ana
-app.use('/api/encuesta', require('./routes/encuesta.js'))
+app.use('/api/preguntaSelec', require('./routes/preguntaSelec.js'))
+app.use('/api/bancoPregu', require('./routes/bancoPregu.js'))
 
 
 
