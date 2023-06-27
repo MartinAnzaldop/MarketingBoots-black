@@ -18,7 +18,9 @@ app.use(express.json());
 
 
 //Funciones de Norma
+
 app.use('/api/respuestas', require('./routes/respuestas.js'))
+
 
 
 
