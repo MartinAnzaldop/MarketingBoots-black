@@ -23,7 +23,6 @@ app.use('/api/respuestas', require('./routes/respuestas.js'))
 
 
 
-
 //Funciones de Ana
 app.listen(4000, ()=>{
     console.log('El servidor 4000 esta corriendo')
