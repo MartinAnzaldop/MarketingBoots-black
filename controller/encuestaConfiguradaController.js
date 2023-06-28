@@ -16,8 +16,8 @@ exports.crearEncuestaConfigurada = async (req, res) => {
 //Get//
 exports.consultarEncuestaConfigurada = async (req, res) =>{
     try {
-        const encuestaconfigurada = await encuestaConfigurada.find();
-        res.json(encuestaconfigurada)
+        const encuestaconfiguradas = await encuestaConfigurada.find();
+        res.json(encuestaconfiguradas)
     }catch (error){
         res.status(500).send("Hubo un error al consultar la encuesta configurada")
     }
@@ -58,14 +58,15 @@ exports.editarEncuestaConfiguracion = async (req, res) => {
 
 //Delete//
 exports.eliminarEncuestaConfigurada = async (req, res) => {
-    try{
+    try {
         let encuestaconfigurada = await encuestaConfigurada.findById(req.params.id);
-        if (!encuestaconfigurada){
-            res.status(404).json({msg: "No existe la encuesta configurada con este id"})
-        }
-        await encuestaConfigurada.findByIdAndRemove({_id: req.params.id})
-        res.json({msg: "Encuesta configurada eliminada con exito"});
-    } catch (error) {
+          if(!encuestaconfigurada){
+              res.status(404).json({ msg: "No existe la encuesta configurada con ese id"})
+             }
+             await encuestaConfigurada.findByIdAndRemove({_id: req.params.id})
+             res.json({msg:"pedido eliminado con exito"});
+  
+      } catch (error) {
         res.status(500).send("Hubo un error al eliminar una encuesta configurada");
-    }
+      }
 };
