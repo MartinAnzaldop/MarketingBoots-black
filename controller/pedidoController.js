@@ -47,9 +47,24 @@ exports.crearPedido = async (req, res) => {
 
   exports.editarPedido = async (req, res) => {
     try {
-      
+      const {empresa, direccion, contacto, encargado, categoria, nombreArticulo, precioArticulo, marcaArticulo, descripcionArticulo}=req.body;
+       let pedido = await Pedido.findById(req.params.id);
+       if(!pedido){
+        res.status(404).json({ msg: "No existe el producto con esa id"})
+       }
+       pedido.empresa=empresa;
+       pedido.direccion=direccion;
+       pedido.contacto=contacto;
+       pedido.encargado=encargado;
+       pedido.categoria=categoria;
+       pedido.nombreArticulo=nombreArticulo;
+       pedido.precioArticulo=precioArticulo;
+       pedido.marcaArticulo=marcaArticulo;
+       pedido.descripcionArticulo=descripcionArticulo;
+       pedido = await Pedido.findOneAndUpdate({_id: req.params.id}, pedido, {new:true})
+       res.json(pedido)
 
     } catch (error) {
-      res.status(500).send("Hubo un error al insertar un producto");
+      res.status(500).send("Hubo un error al editar un producto");
     }
-  };
+  }; 
