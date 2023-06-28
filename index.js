@@ -22,6 +22,7 @@ app.use('/api/servicio', require('./routes/servicio.js'))
 
 //Funciones de Norma
 
+app.use('/api/respuestas', require('./routes/respuestas.js'))
 
 
 
