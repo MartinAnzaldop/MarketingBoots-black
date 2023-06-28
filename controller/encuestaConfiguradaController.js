@@ -7,6 +7,7 @@ exports.crearEncuestaConfigurada = async (req, res) => {
      encuestaconfigurada = new encuestaConfigurada(req.body)
      await encuestaconfigurada.save()
      res.send(encuestaconfigurada)
+     console.log(encuestaconfigurada);
     } catch (error) {
       res.status(500).send("Hubo un error al insertar una encuesta configurada");
     }

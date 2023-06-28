@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const encuestaConfiguradaSchema = mongoose.Schema({
     fechaInicio:{
-        type:Date,
+        type:String,
         require:true
     },
     fechaFinal:{
-        type:Date,
+        type:String,
         require:true
     },
     titulo:{
