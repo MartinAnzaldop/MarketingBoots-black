@@ -14,16 +14,16 @@ exports.crearEncuestaConfigurada = async (req, res) => {
   };
 
 //Get//
-/*exports.consultarEncuestaConfigurada = async (req, res) =>{
+exports.consultarEncuestaConfigurada = async (req, res) =>{
     try {
-        const encuestaconfigurada = await encuestaconfigurada.find();
-        res.json(encuestaconfigurada);
-    } catch(error){
-        restart.status(500).send("Hubo un problema al consultar las encuestas configuradas");
+        const encuestaconfigurada = await encuestaConfigurada.find();
+        res.json(encuestaconfigurada)
+    }catch (error){
+        res.status(500).send("Hubo un error al consultar la encuesta configurada")
     }
 };
 
-//Petición id//
+/*//Petición id//
 exports.consultarEncuestaConfiguradaById = async (req, res) =>{
   try{
         let encuestaconfigurada = await encuestaConfigurada.findById(req.params.id);

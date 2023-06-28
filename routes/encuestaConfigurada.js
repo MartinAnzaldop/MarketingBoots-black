@@ -5,7 +5,7 @@ const encuestaConfiguradaController = require('../controller/encuestaConfigurada
 
 //api/encuesta configurada
 router.post('/', encuestaConfiguradaController.crearEncuestaConfigurada);
-//router.get('/', encuestaConfiguradaController.consultarEncuestaConfigurada);
+router.get('/', encuestaConfiguradaController.consultarEncuestaConfigurada);
 //router.get('/:id', encuestaConfiguradaController.consultarEncuestaConfiguradaById);
 //router.put('/:id', encuestaConfiguradaController.editarEncuestaConfiguracion);
 router.delete('/:id', encuestaConfiguradaController.eliminarEncuestaConfigurada);
