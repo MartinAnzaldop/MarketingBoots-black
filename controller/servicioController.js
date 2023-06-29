@@ -1,16 +1,29 @@
-const Servicio = require('../models/Servicio.js');
+const Servicio = require("../models/Servicio.js");
+const path = require("path");
+const fs = require("fs-extra");
 
 //Post//
-exports.crearServicio= async (req, res)=>{
- try {
-     let servicio;
-     servicio = new Servicio(req.body);
-     await servicio.save();
-     res.send(servicio)
- } catch (error) {
-    res.status(500).send('Error al insertar un servicio');
- }
-}
+exports.crearServicio = async (req, res) => {
+  try {
+    const { nombreSer, empresa, precio, categoria, descripcion, imagen } =
+      req.body;
+    const newservicio = {
+      nombreSer: nombreSer,
+      empresa: empresa,
+      precio: precio,
+      categoria: categoria,
+      descripcion: descripcion,
+      URLimagen: req.file.path,
+    };
+
+    const servicio = new Servicio(newservicio);
+
+    await servicio.save();
+    res.send(servicio);
+  } catch (error) {
+    res.status(500).send("Hubo un error al insertar un servicio");
+  }
+};
 
 //Get//
 exports.consultarServicio= async (req, res)=>{

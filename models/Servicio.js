@@ -15,6 +15,11 @@ const ServicioSchema = mongoose.Schema({
         type: Number,
         require: true
     },
+    
+        categoria:{
+        type: String,
+        require: true
+    },
 
     descripcion:{
         type: String,

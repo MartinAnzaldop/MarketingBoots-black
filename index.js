@@ -16,7 +16,7 @@ app.use('/upload', express.static(path.resolve('uploads')))
 
 //Funciones de Ale
 app.use('/api/servicio', require('./routes/servicio.js'))
-
+app.use('/api/encuestaConfigurada', require('./routes/encuestaConfigurada'))
 
 
 
