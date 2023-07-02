@@ -7,6 +7,7 @@ const respuestasController=require('../controller/respuestasController')
 router.post('/', respuestasController.crearRespuestas);
 router.get('/', respuestasController.consultarRespuestas);
 router.get('/:id', respuestasController.consultarRespuestasById);
-
+router.put('/:id', respuestasController.editarRespuestas);
+router.delete('/:id', respuestasController.eliminarRespuestas);
 
 module.exports=router;
