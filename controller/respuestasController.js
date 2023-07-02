@@ -1,17 +1,19 @@
 const Respuestas = require('../models/Respuestas.js');
+const path = require("path");
+
 
 //Peticion id//
 exports.consultarRespuestasById= async (req, res)=>{
     try {
         let respuestas = await Respuestas.findById(req.params.id);
-        if(!preguntaSelec){
+        if(!respuestas){
             res.status(404).json({ msg: "No existe la respuesta con esa id"})
            }
            res.json(respuestas);
     } catch{ 
        res.status(500).send('Error al consultar la respuesta por id');
     }
-   }; 
+   } 
 
 
 //Peticion Post//
@@ -38,7 +40,7 @@ exports.crearRespuestas = async (req, res) => {
     } catch (error) {
       res.status(500).send("Hubo un error al insertar una respuesta");
     }
-  };
+  }
 
 
 //Peticion Get//
@@ -49,7 +51,7 @@ exports.consultarRespuestas= async (req, res)=>{
     } catch (error) {
        res.status(500).send('Error al consultar respuesta');
     }
-   };
+   }
 
 //Peticion Put//
 exports.editarRespuestas = async (req, res)=>{
@@ -76,7 +78,7 @@ exports.editarRespuestas = async (req, res)=>{
   } catch (error) {
      res.status(500).send('Error al editar una respuesta');
   }
-};
+}
 
 
 //Peticion Delete//
@@ -86,9 +88,9 @@ exports.eliminarRespuestas= async (req, res)=>{
       if(!respuestas){
           res.status(404).json({ msg: "No existe esta respuesta con id"})
          }
-         await Respuesta.findByIdAndRemove({_id: req.params.id})
+         await Respuestas.findByIdAndRemove({_id: req.params.id})
          res.json({msg:"Respuesta eliminada con exito"});
   } catch{
      res.status(500).send('Error al eliminar una respuesta');
   }
-};
+}
