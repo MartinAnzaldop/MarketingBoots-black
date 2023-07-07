@@ -1,4 +1,4 @@
-//Rutas para encuesta encuestas seleccionadas
+//Rutas para encuesta encuestas configuradas
 const express=require('express');
 const router=express.Router();
 const encuestaConfiguradaController = require('../controller/encuestaConfiguradaController');
@@ -6,8 +6,8 @@ const encuestaConfiguradaController = require('../controller/encuestaConfigurada
 //api/encuesta configurada
 router.post('/', encuestaConfiguradaController.crearEncuestaConfigurada);
 router.get('/', encuestaConfiguradaController.consultarEncuestaConfigurada);
-//router.get('/:id', encuestaConfiguradaController.consultarEncuestaConfiguradaById);
-//router.put('/:id', encuestaConfiguradaController.editarEncuestaConfiguracion);
+router.get('/:id', encuestaConfiguradaController.consultarEncuestaConfiguradayId);
+router.put('/:id', encuestaConfiguradaController.editarEncuestaConfigurada);
 router.delete('/:id', encuestaConfiguradaController.eliminarEncuestaConfigurada);
 
 
