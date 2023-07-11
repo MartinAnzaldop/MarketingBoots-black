@@ -20,18 +20,14 @@ exports.consultarRespuestasById= async (req, res)=>{
 exports.crearRespuestas = async (req, res) => {
     try {
       const {respuesta1, respuesta2, respuesta3, respuesta4, respuesta5,
-        respuesta6, respuesta7, respuesta8, respuesta9, respuesta10} = req.body;
+        respuesta6} = req.body;
       const newrespuestas = {
         respuesta1: respuesta1,
         respuesta2: respuesta2,
         respuesta3: respuesta3,
         respuesta4: respuesta4,
         respuesta5: respuesta5,
-        respuesta6: respuesta6,
-        respuesta7: respuesta7,
-        respuesta8: respuesta8,
-        respuesta9: respuesta9,
-        respuesta10: respuesta10,
+        respuesta6: respuesta6
       };
       const respuestas = new Respuestas(newrespuestas);
   
@@ -57,7 +53,7 @@ exports.consultarRespuestas= async (req, res)=>{
 exports.editarRespuestas = async (req, res)=>{
   try {
      const {respuesta1, respuesta2, respuesta3, respuesta4, respuesta5,
-      respuesta6, respuesta7, respuesta8, respuesta9, respuesta10}=req.body;
+      respuesta6}=req.body;
      let respuestas = await Respuestas.findById(req.params.id);
      if(!respuestas){
       res.status(404).json({ msg: "No existe la respuesta con esa id"})
@@ -68,10 +64,7 @@ exports.editarRespuestas = async (req, res)=>{
      respuestas.respuesta4 = respuesta4;
      respuestas.respuesta5 = respuesta5;
      respuestas.respuesta6 = respuesta6;
-     respuestas.respuesta7 = respuesta7;
-     respuestas.respuesta8 = respuesta8;
-     respuestas.respuesta9 = respuesta9;
-     respuestas.respuesta10 = respuesta10,
+     
      
      respuestas = await Respuestas.findOneAndUpdate({_id: req.params.id}, respuestas, {new:true})
      res.json(respuestas);
