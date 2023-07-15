@@ -17,10 +17,11 @@ exports.consultarBancoPreguById= async (req, res)=>{
 //Peticion Post//
 exports.crearBancoPregu = async (req, res) => {
     try {
-      const {pregunta, categoria} = req.body;
+      const {pregunta, categoria, opcion} = req.body;
       const newbancopregu = {
         pregunta: pregunta,
         categoria: categoria,
+        opcion: opcion,
       };
       const bancoPregu = new BancoPregu(newbancopregu);
   
@@ -46,13 +47,14 @@ exports.consultarBancoPregu= async (req, res)=>{
 //Peticion Put//
 exports.editarBancoPregu = async (req, res)=>{
     try {
-       const {pregunta, categoria}=req.body;
+       const {pregunta, categoria, opcion}=req.body;
        let bancoPregu = await BancoPregu.findById(req.params.id);
        if(!bancoPregu){
         res.status(404).json({ msg: "No existe una pregunta con esa id"})
        }
        bancoPregu.pregunta = pregunta;
        bancoPregu.categoria = categoria;
+       bancoPregu.opcion = opcion;
        bancoPregu = await BancoPregu.findOneAndUpdate({_id: req.params.id}, bancoPregu, {new:true})
        res.json(bancoPregu);
     } catch (error) {

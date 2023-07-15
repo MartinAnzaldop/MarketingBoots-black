@@ -26,11 +26,12 @@ const PreguntaSelecSchema = mongoose.Schema({
         type: String,
         require:true
     },
+    
     pregunta6:{
         type: String,
         require:true
     },
-
+    
     pregunta7:{
         type: String,
         require:true
@@ -45,7 +46,7 @@ const PreguntaSelecSchema = mongoose.Schema({
         type: String,
         require:true
     },
-    
+
     pregunta10:{
         type: String,
         require:true

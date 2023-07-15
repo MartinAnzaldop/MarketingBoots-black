@@ -10,6 +10,11 @@ const BancoPreguSchema = mongoose.Schema({
     categoria:{
         type: String,
         require:true
+    },
+
+    opcion:{
+        type: String,
+        require:true
     }
 });
 
