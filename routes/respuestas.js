@@ -10,4 +10,4 @@ router.get('/:id', respuestasController.consultarRespuestasById);
 router.put('/:id', respuestasController.editarRespuestas);
 router.delete('/:id', respuestasController.eliminarRespuestas);
 
-module.exports=router;
+module.exports=router; 

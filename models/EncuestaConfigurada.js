@@ -11,7 +11,7 @@ const encuestaConfiguradaSchema = mongoose.Schema({
     },
     titulo:{
         type:String,
-        require:true
+       
     },
     poblacion:{
         type:String,
