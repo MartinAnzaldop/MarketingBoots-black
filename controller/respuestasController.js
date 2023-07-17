@@ -19,19 +19,30 @@ exports.consultarRespuestasById= async (req, res)=>{
 //Peticion Post//
 exports.crearRespuestas = async (req, res) => {
     try {
-      const {respuesta1, respuesta2, respuesta3, respuesta4, respuesta5,
-        respuesta6, respuesta7, respuesta8, respuesta9, respuesta10} = req.body;
+      const {ubicacion, respuesta1, pregunta1, respuesta2, pregunta2, respuesta3,pregunta3,  respuesta4, pregunta4,  respuesta5,pregunta5, 
+        respuesta6,pregunta6,  respuesta7,pregunta7,  respuesta8,pregunta8,  respuesta9, pregunta9, respuesta10,pregunta10, } = req.body;
       const newrespuestas = {
+        ubicacion: ubicacion,
         respuesta1: respuesta1,
+        pregunta1:pregunta1,
         respuesta2: respuesta2,
+        pregunta2:pregunta2,
         respuesta3: respuesta3,
+        pregunta3:pregunta3,
         respuesta4: respuesta4,
+        pregunta4:pregunta4,
         respuesta5: respuesta5,
+        pregunta5:pregunta5,
         respuesta6: respuesta6,
+        pregunta6:pregunta6,
         respuesta7: respuesta7,
+        pregunta7:pregunta7,
         respuesta8: respuesta8,
+        pregunta8:pregunta8,
         respuesta9: respuesta9,
+        pregunta9:pregunta9,
         respuesta10: respuesta10,
+        pregunta10:pregunta10,
       };
       const respuestas = new Respuestas(newrespuestas);
   
