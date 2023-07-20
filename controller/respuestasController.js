@@ -29,7 +29,7 @@ exports.crearRespuestas = async (req, res) => {
         pregunta2:pregunta2,
         respuesta3: respuesta3,
         pregunta3:pregunta3,
-        respuesta4: respuesta4,
+        respuesta4: respuesta4, 
         pregunta4:pregunta4,
         respuesta5: respuesta5,
         pregunta5:pregunta5,
