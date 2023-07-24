@@ -8,16 +8,16 @@ const path = require('path');
 conectarDB()
 app.use(cors());
 app.use(express.json());
+
 //Funciones de Martin
 app.use('/api/pedido', require('./routes/pedido.js') );
-app.use('/api/producto', require('./routes/producto.js'))
 app.use('/upload', express.static(path.resolve('uploads')))
-
+app.use('/api/solicitud', require('./routes/solicitud.js'))
 
 //Funciones de Ale
 app.use('/api/servicio', require('./routes/servicio.js'))
 app.use('/api/encuestaConfigurada', require('./routes/encuestaConfigurada'))
-
+ 
 
 
 //Funciones de Norma
