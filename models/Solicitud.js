@@ -1,114 +1,118 @@
-const mongoose= require('mongoose');
+const mongoose = require("mongoose");
 
-const SolicitudSchema=mongoose.Schema({
-empresa:{
+const SolicitudSchema = mongoose.Schema({
+  usuario: {
     type: String,
-    require:true
-},
-direccion:{
+    require: true,
+  },
+  empresa: {
     type: String,
-    require:true
-},
-contacto:{
+    require: true,
+  },
+  direccion: {
     type: String,
-    require:true
-},
-encargado:{
+    require: true,
+  },
+  contacto: {
     type: String,
-    require:true
-},
-categoria:{
+    require: true,
+  },
+  encargado: {
     type: String,
-    require:true
-},
-nombreArticulo:{
+    require: true,
+  },
+  categoria: {
     type: String,
-},
-precioArticulo:{
+    require: true,
+  },
+  nombreArticulo: {
+    type: String,
+  },
+  precioArticulo: {
     type: Number,
-    require:true
-},
-marcaArticulo:{
+    require: true,
+  },
+  marcaArticulo: {
     type: String,
-},
-descripcionArticulo:{
+  },
+  descripcionArticulo: {
     type: String,
-},
-fechaCreacion:{ 
+  },
+  fechaCreacion: {
     type: Date,
-    default: Date.now()
-},
+    default: Date.now(),
+  },
 
-fechaInicio:{
-    type:String,
-    require:true
-},
-fechaFinal:{
-    type:String,
-    require:true
-},
-titulo:{
-    type:String,
-},
-objetivo:{
-    type:String,
-},
-poblacion:{
-    type:String,
-    require:true
-},
-numeroEncuesta:{
-    type:Number,
-    require: true
-},
-pregunta1:{
+  fechaInicio: {
     type: String,
-    require:true
-},
+    require: true,
+  },
+  fechaFinal: {
+    type: String,
+    require: true,
+  },
+  titulo: {
+    type: String,
+  },
+  objetivo: {
+    type: String,
+  },
+  poblacion: {
+    type: String,
+    require: true,
+  },
+  numeroEncuesta: {
+    type: Number,
+    require: true,
+  },
+  pregunta1: {
+    type: String,
+    require: true,
+  },
 
-pregunta2:{
+  pregunta2: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta3:{
+  pregunta3: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta4:{
+  pregunta4: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta5:{
+  pregunta5: {
     type: String,
-    require:true
-},
-pregunta6:{
+    require: true,
+  },
+  pregunta6: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta7:{
+  pregunta7: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta8:{
+  pregunta8: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta9:{
+  pregunta9: {
     type: String,
-    require:true
-},
+    require: true,
+  },
 
-pregunta10:{
+  pregunta10: {
     type: String,
-    require:true
-}
+    require: true,
+  },
 });
 
-module.exports = mongoose.model('Solicitud', SolicitudSchema);
+module.exports = mongoose.model("Solicitud", SolicitudSchema);

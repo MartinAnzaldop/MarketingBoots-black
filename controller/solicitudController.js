@@ -13,13 +13,14 @@ exports.crearSolicitud = async (req, res) => {
  
   exports.editarSolicitud = async (req, res) => {
     try {
-      const {empresa, direccion, contacto, encargado, categoria, nombreArticulo, precioArticulo, marcaArticulo, descripcionArticulo,
+      const {usuario, empresa, direccion, contacto, encargado, categoria, nombreArticulo, precioArticulo, marcaArticulo, descripcionArticulo,
       fechaInicio, fechaFinal, titulo, objetivo, poblacion, numeroEncuesta, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6,
       pregunta7, pregunta8, pregunta9, pregunta10}=req.body;
        let solicitud = await Solicitud.findById(req.params.id);
        if(!solicitud){
         res.status(404).json({ msg: "No existe el producto con esa id"})
-       }     
+       }   
+       solicitud.usuario=usuario;   
        solicitud.empresa=empresa; 
        solicitud.direccion=direccion;
        solicitud.contacto=contacto;
