@@ -10,5 +10,5 @@ router.get('/:id', bancoPreguController.consultarBancoPreguById);
 router.put('/:id', bancoPreguController.editarBancoPregu);
 router.delete('/:id', bancoPreguController.eliminarBancoPregu);
 
-
+ 
 module.exports=router;
