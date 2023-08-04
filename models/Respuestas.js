@@ -1,11 +1,43 @@
 const mongoose = require('mongoose');
 
 const RespuestasSchema = mongoose.Schema({
+    nombre:{
+        type: String,
+        require:true
+    },
+    edad:{
+        type: Number,
+        require:true
+    },
     ubicacion:{
         type: String,
         require:true
     },
-    pregunta1:{
+    empresa:{
+        type: String,
+        require:true
+    },
+    direccion:{
+        type: String,
+        require:true
+    },
+    nombreArticulo:{
+        type: String,
+        require:true
+    },
+    precioArticulo:{
+        type: Number,
+        require:true
+    },
+    ubicacion:{
+        type: String,
+        require:true
+    },
+    marcaArticulo:{
+        type: String,
+        require:true
+    },
+    titulo:{
         type: String,
         require:true
     },
