@@ -23,6 +23,11 @@ app.use(express.json());
 
 
 //Funciones de Ana
+app.use('/api/preguntaSelec', require('./routes/preguntaSelec.js'))
+app.use('/api/bancoPregu', require('./routes/bancoPregu.js'))
+
+
+
 app.listen(4000, ()=>{
     console.log('El servidor 4000 esta corriendo')
 })
